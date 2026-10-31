@@ -2,9 +2,6 @@
 
 Браузерная игра о поиске работы. Сначала ты полдня работаешь рекрутером и находишь в стопке собственное резюме, потом тебя сокращают, и ты ищешь работу сам, разгадывая вакансии как детектив.
 
-- Опубликованная версия: https://claude.ai/artifact/8vgbzVvGkvPuyBZfVjmN5i
-- Дизайн-документ: https://claude.ai/artifact/A56ixM1R1PWctH7yckmN9Q
-
 Текущая версия — v1.1: 7 языков интерфейса (en, es, it, fr, ja, ru, zh) и 7 стран (Россия, США, Испания, Италия, Франция, Япония, Китай).
 
 ## Структура
@@ -94,6 +91,12 @@ python3 -m http.server 8765 --directory dist/amplify
 ```
 
 и открыть http://localhost:8765.
+
+## Деплой на GitHub Pages
+
+`.github/workflows/pages.yml` при каждом пуше в `main` запускает `./build.sh` и выкладывает `dist/amplify/index.html`. Один раз нужно включить: **Settings → Pages → Source: GitHub Actions**. Адрес: https://stml89.github.io/one-of-250/. Ход сборки виден во вкладке **Actions**; запустить вручную — там же, **Run workflow**.
+
+Заголовки из `deploy/customHttp.yml` GitHub Pages не применяет: кэш там свой, около 10 минут.
 
 ## Деплой на AWS Amplify
 

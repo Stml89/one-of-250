@@ -1,6 +1,4 @@
-# 1 in 250
-
-[English](#english) · [Русский](#русский)
+# One in 250
 
 ## English
 

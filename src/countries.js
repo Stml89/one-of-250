@@ -139,7 +139,7 @@ const COUNTRIES={
     insys:[{ru:"мини-апп «关系» (гуаньси)",en:"the «guanxi» mini-app"},{ru:"KPI-система «Волк»",en:"the «Wolf» KPI system"},{ru:"OA-портал «Fubao»",en:"the «Fubao» OA portal"},{ru:"чат-бот «Neijuan»",en:"the «Neijuan» chatbot"}],
     grades:[["P5",0,"post"],["P6",2,"post"],["P7",5,"post"]],
     titles:{dev:{ru:"Java-разработчик (996)",en:"Java developer (996)",tag:"backend",nice:"devops"},mk:{ru:"Оператор новых медиа (新媒体运营)",en:"New-media operator",tag:"smm",nice:"content"},
-      pm:{ru:"Проджект-менеджер (项目经理)",en:"Project manager (xiangmu jingli)",tag:"delivery",nice:"budget"},hr:{ru:"HRBP («волчья культура»)",en:"HRBP («wolf culture»)",tag:"onboarding",nice:"recruiting"}},
+      pm:{ru:"Проджект-менеджер (项目经理)",en:"Project manager (xiangmu jingli)",tag:"delivery",nice:"budget"},hr:{ru:"HRBP в быстрорастущей компании",en:"HRBP at a fast-growing company",tag:"onboarding",nice:"recruiting"}},
     planB:[{ru:"курьер доставки еды (外卖骑手)",en:"food delivery rider"},{ru:"продавец в прямом эфире",en:"livestream seller"}]}
 };
 const COUNTRY_KEYS=["ru","us","es","it","fr","jp","cn"];
@@ -164,8 +164,8 @@ const MARKET_STATS={
   jp:{press:0.85,facts:[["unemp",2.5,"2026-08","Statistics Bureau of Japan","https://www.stat.go.jp/english/data/roudou/index.html"],["jobsRatio",1.18,"2026-06","MHLW","https://www.mhlw.go.jp/toukei/list/114-1.html"],["fullTime",0.99,"2026-04","MHLW","https://www.mhlw.go.jp/toukei/list/114-1.html"]]},
   cn:{press:1.15,young:1.6,facts:[["unemp",5.2,"2026-09","NBS","https://www.stats.gov.cn/english/PressRelease/"],["youth",18.0,"2026-09","NBS","https://www.stats.gov.cn/english/PressRelease/"],["grads",12700000,"2026-06","MoE","https://govt.chinadaily.com.cn/s/202511/21/WS694a4679498e368550339281/china-to-have-12-7-million-new-college-graduates-next-year.html"]]}
 };
-/* the same for every country: Greenhouse Hire Standard (2025 data), TheLadders eye-tracking study (2012) */
-const WORLD_STATS={appsPerJob:244,appsSrc:"Greenhouse",appsYear:2025,appsUrl:"https://www.greenhouse.com/recruiting-benchmarks",glanceSec:6,glanceSrc:"TheLadders",glanceYear:2012,glanceUrl:"https://web.archive.org/web/20131214121352/http://cdn.theladders.net/static/images/basicSite/pdfs/TheLadders-EyeTracking-StudyC2.pdf"};
+/* the same for every country: Greenhouse Hire Standard (2025 data), TheLadders eye-tracking study (2018 update: 7.4 s, shown as 7) */
+const WORLD_STATS={appsPerJob:244,appsSrc:"Greenhouse",appsYear:2025,appsUrl:"https://www.greenhouse.com/recruiting-benchmarks",glanceSec:7,glanceSrc:"TheLadders",glanceYear:2018,glanceUrl:"https://www.prnewswire.com/news-releases/ladders-updates-popular-recruiter-eye-tracking-study-with-new-key-insights-on-how-job-seekers-can-improve-their-resumes-300744217.html"};
 
 /* Each language file adds its own wording for the country data through COUNTRY_TEXT[lang];
    missing entries fall back to English. */

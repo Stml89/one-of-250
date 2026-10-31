@@ -114,7 +114,7 @@ LANG.en={
     {t:"What are you proud of at work?",o:[["A specific project with a measurable result",2],["That I was never late",0],["A bit of everything",1]]}
   ],
   stages:{
-    hr:{name:"HR call",who:["An HR manager with five more calls today","An agency recruiter seeing the role for the first time","An HR manager with the camera at chin level"],invite:"Hello! Your CV caught our attention. Do you have 20 minutes for a call?"},
+    hr:{name:"HR call",who:["An HR manager with five more calls today","An agency recruiter whose client sent a three-line job description","An HR manager handling eight other vacancies"],invite:"Hello! Your CV caught our attention. Do you have 20 minutes for a call?"},
     pro:{name:"Technical interview",who:["Your future manager in a hoodie","Three people with their cameras off","A senior specialist who clearly wanted this job himself"],invite:"You passed the first round! We'd like to invite you to a technical interview."},
     final:{name:"Final with the manager",who:["A department head who keeps looking at another screen","The founder (15 minutes late)","A director who asks twice how you feel about overtime"],invite:"One last step: a meeting with the manager."},
     ceo:{name:"Meeting with the CEO",who:["A CEO who has already decided","The CEO (a relative of the «own» candidate)"],invite:"One more formality: the CEO would like to meet you in person."}
@@ -152,7 +152,7 @@ LANG.en={
     grads:(f,v)=>`a record ${f(v/1e6)} million new graduates this year`,
     young:"You're under 25: young people have a harder time here, so your vacancies draw more competition.",press:x=>`In the game: applicants per vacancy ×${x} the US level.`,
     apps:(n,s,y)=>`For real: a vacancy gets ${n} applications on average (${s}, ${y} data).`,
-    glance:(n,s,y)=>`For comparison: in the ${s} study (${y}) recruiters decided on a CV in about ${n} seconds.`,
+    glance:(n,s,y)=>`For comparison: a study by ${s} (${y}) found that recruiters decide on a CV in about ${n} seconds.`,
     search:(w,m,l,s)=>`You searched for ${w} weeks. The US median is ${m} weeks, and ${l}% of the unemployed search for over half a year (${s}).`},
   memo:{spotted:(n,t)=>`signs spotted: ${n} of ${t}`,coachNotes:"The signs of fakes are in the cheat sheet above. The ones you spot get ticked off.",title:"Detective's cheat sheet",intro:"Not every job is real. Some stay open for a report, some are already promised to an insider, some want your money. Applying to them is wasted energy.",
     ghost:"Ghost",ghostL:["posted over a month ago","hundreds of applicants","«we're always looking for talent»","no hiring process described"],
@@ -198,11 +198,11 @@ LANG.en={
     detail:{scam:"pay above market, no experience needed, and you're the one paying",ghost:(d,n)=>`open for ${d} days, ${n} applicants, nobody was hiring`,exp:(m,h)=>`needs ${m}+ years, you have ${years(h)}`,
       salary:(a,c)=>`your ask ${a}, their ceiling ${c}`,lang:(n,h)=>`needs English ${n}, you have ${h}`,city:c=>`office in ${c}, and your CV doesn't say you'd relocate`,
       nocover:"no cover letter, so nobody even opened it",mode:f=>`your CV says «remote only», theirs is ${f.toLowerCase()}`,skill:t=>`required: ${t}, and your CV doesn't have it`,
-      aiCols:"the bot couldn't read two columns",aiTop:t=>`the bot didn't find «${t}» in the first two lines`,vacation:"the recruiter went on vacation before reaching you",
+      aiCols:"the bot couldn't read two columns",aiTop:t=>`the bot didn't find «${t}» in the first two lines`,vacation:"the vacancy was frozen and nobody ever got to your CV",
       queue:(i,n)=>`you were #${i} of ${n}, the recruiter stopped at 55`,hooked:"the CV hooked them",broke:"two columns and a photo turned into a mess of characters",
       buried:(t,i)=>`your best line «${t}» was #${i}, the recruiter read up to #2`,generic:t=>`generic lines: nothing about ${t}`,noNumbers:t=>`the line about ${t} had no numbers or results`,outcompeted:"a strong CV, but the competition was stronger",
       ghostStage:s=>`disappeared after the «${s}» round`,noshow:"didn't reply to the invite within a week",testLate:"the take-home task was never submitted",offerLate:"didn't reply to the offer within a week",
-      internal:"the role was opened for show; the seat went to an insider long ago",frozen:"the budget was pulled mid-process",ghostFinal:"the recruiter vanished after the final round",
+      internal:"the role was opened for show; the seat went to an insider long ago",frozen:"the budget was pulled mid-process",ghostFinal:"after the final round the company vanished and never got back in touch",
       lostTest:t=>`the task ${t}, they hired someone else`,lost:"another candidate answered more confidently",tooLate:"invited, but the search ended first",lie:"they checked a line that wasn't true",
       stageFail:s=>`didn't pass the «${s}» round`,testNo:"you refused to work for free",scamPaid:"«training» cost a week and a half of savings",accepted:m=>`offer accepted: ${m}`,haggleFail:"asked for more, the offer was withdrawn",declined:"you decided to keep looking"},
     scamMsg:f=>`Congratulations, you're hired! To get started, pay for the prep course — ${f}. Limited spots!`,

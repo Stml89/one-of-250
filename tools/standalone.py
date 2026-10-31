@@ -21,9 +21,9 @@ img{max-width:100%}
 
 META = """<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="A game about job hunting: screen 250 CVs as a recruiter, find your own in the pile, then hunt for a job yourself.">
+<meta name="description" content="Five minutes on the recruiter’s side, and “your CV gets 7 seconds” stops sounding like a cliché.">
 <meta property="og:title" content="1 in 250">
-<meta property="og:description" content="A game about job hunting. One daily run, the same for everyone.">
+<meta property="og:description" content="Five minutes on the recruiter’s side, and “your CV gets 7 seconds” stops sounding like a cliché.">
 <meta property="og:type" content="website">"""
 
 # The public build hides tester-only controls, such as resetting today's daily result.

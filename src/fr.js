@@ -114,7 +114,7 @@ LANG.fr={
     {t:"De quoi êtes-vous fi{er|ère} au travail ?",o:[["D'un projet précis avec un résultat mesurable",2],["De n'être jamais arrivé{|e} en retard",0],["Un peu de tout",1]]}
   ],
   stages:{
-    hr:{name:"Appel RH",who:["Une chargée RH qui a encore cinq appels aujourd'hui","Un recruteur de cabinet qui découvre l'offre","Une chargée RH avec la caméra au niveau du menton"],invite:"Bonjour ! Votre CV nous intéresse. Auriez-vous 20 minutes pour un appel ?"},
+    hr:{name:"Appel RH",who:["Une chargée RH qui a encore cinq appels aujourd'hui","Un recruteur de cabinet à qui le client a envoyé l'offre en trois lignes","Une chargée RH qui gère huit autres postes"],invite:"Bonjour ! Votre CV nous intéresse. Auriez-vous 20 minutes pour un appel ?"},
     pro:{name:"Entretien technique",who:["Votre futur manager en sweat à capuche","Trois personnes caméra éteinte","Un senior qui voulait clairement ce poste pour lui"],invite:"Vous avez passé la première étape ! Nous vous invitons à l'entretien technique."},
     final:{name:"Entretien final avec le manager",who:["Un chef de service qui regarde sans cesse un autre écran","Le fondateur (15 minutes de retard)","Un directeur qui demande deux fois ce que vous pensez des heures sup"],invite:"Dernière étape : une rencontre avec le manager."},
     ceo:{name:"Rencontre avec le PDG",who:["Un PDG qui a déjà décidé","Le PDG (un proche du candidat « maison »)"],invite:"Encore une formalité : le PDG souhaite vous rencontrer en personne."}
@@ -198,11 +198,11 @@ LANG.fr={
     detail:{scam:"salaire au-dessus du marché, sans expérience, et c'est toi qui paies",ghost:(d,n)=>`ouverte depuis ${d} jours, ${n} candidats, personne ne recrutait`,exp:(m,h)=>`il faut ${years(m)}, tu en as ${h}`,
       salary:(a,c)=>`tu demandais ${a}, leur plafond était ${c}`,lang:(n,h)=>`anglais ${n} exigé, tu as ${h}`,city:c=>`bureaux à ${c}, et ton CV ne dit pas que tu déménagerais`,
       nocover:"sans lettre de motivation, personne ne l'a ouverte",mode:f=>`ton CV dit « télétravail uniquement », chez eux c'est ${f.toLowerCase()}`,skill:t=>`exigé : ${t}, et ton CV ne l'a pas`,
-      aiCols:"le bot n'a pas su lire deux colonnes",aiTop:t=>`le bot n'a pas trouvé « ${t} » dans les deux premières lignes`,vacation:"le recruteur est parti en vacances avant d'arriver à toi",
+      aiCols:"le bot n'a pas su lire deux colonnes",aiTop:t=>`le bot n'a pas trouvé « ${t} » dans les deux premières lignes`,vacation:"le poste a été gelé, personne n'est arrivé jusqu'à ton CV",
       queue:(i,n)=>`tu étais n° ${i} sur ${n}, le recruteur s'est arrêté au 55e`,hooked:"le CV a accroché",broke:"deux colonnes et une photo sont devenues une bouillie de caractères",
       buried:(t,i)=>`ta meilleure ligne « ${t} » était en position ${i}, le recruteur a lu jusqu'à la 2e`,generic:t=>`lignes génériques : rien sur ${t}`,noNumbers:t=>`la ligne sur ${t} n'avait ni chiffres ni résultats`,outcompeted:"un bon CV, mais la concurrence était plus forte",
       ghostStage:s=>`disparus après l'étape « ${s} »`,noshow:"pas de réponse à l'invitation en une semaine",testLate:"le test n'a jamais été rendu",offerLate:"pas de réponse à l'offre en une semaine",
-      internal:"le poste était ouvert pour la forme ; la place était déjà à un interne",frozen:"le budget a été retiré en plein process",ghostFinal:"le recruteur a disparu après l'entretien final",
+      internal:"le poste était ouvert pour la forme ; la place était déjà à un interne",frozen:"le budget a été retiré en plein process",ghostFinal:"après l'entretien final, l'entreprise a disparu et n'a plus donné de nouvelles",
       lostTest:t=>`le test ${t}, ils ont pris quelqu'un d'autre`,lost:"un autre candidat a répondu avec plus d'assurance",tooLate:"invité, mais la recherche s'est terminée avant",lie:"ils ont vérifié une ligne qui n'était pas vraie",
       stageFail:s=>`étape « ${s} » non validée`,testNo:"tu as refusé de travailler gratuitement",scamPaid:"la « formation » a coûté une semaine et demie d'épargne",accepted:m=>`offre acceptée : ${m}`,haggleFail:"tu as demandé plus, l'offre a été retirée",declined:"tu as décidé de continuer à chercher"},
     scamMsg:f=>`Félicitations, vous êtes recruté{|e} ! Pour commencer, réglez la formation préparatoire : ${f}. Places limitées !`,
@@ -313,7 +313,7 @@ COUNTRY_TEXT.fr={
     perks:["Le 996 est une bénédiction (fubao)","Dîner offert si tu es encore là après 21 h","Esprit « meute de loups »","Stock-options (un jour)","Voyage annuel en équipe","Capsules de sieste au bureau"],
     oform:{real:["Contrat de travail avec wuxian yijin (protection sociale complète)"],internal:["Contrat de travail avec wuxian yijin (protection sociale complète)"],ghost:["Conditions en entretien"],scam:["Sans protection sociale, payé au résultat","Contrat après la période d'essai"]},
     probation:"Shiyongqi (essai) : 6 mois à 80 % du salaire",insys:["la mini-app « guanxi »","le système de KPI « Loup »","le portail OA « Fubao »","le chatbot « Neijuan »"],
-    titles:{dev:"Développeur Java (996)",mk:"Opérateur nouveaux médias",pm:"Chef de projet (xiangmu jingli)",hr:"HRBP (« culture du loup »)"},planB:["livreur de repas","vendeur en livestream"],
+    titles:{dev:"Développeur Java (996)",mk:"Opérateur nouveaux médias",pm:"Chef de projet (xiangmu jingli)",hr:"HRBP dans une entreprise en pleine croissance"},planB:["livreur de repas","vendeur en livestream"],
     photo:"En Chine, la photo sur le CV est la norme."}
 };
 })();

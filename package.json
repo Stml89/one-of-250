@@ -1,0 +1,12 @@
+{
+  "name": "one-of-250",
+  "private": true,
+  "description": "Dev tooling only: the game itself is one static file built by build.sh",
+  "scripts": {
+    "test": "tests/run.sh",
+    "screens": "playwright test --config tests/playwright.config.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.49.1"
+  }
+}

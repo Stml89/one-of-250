@@ -1,0 +1,17 @@
+# build output: ./build.sh recreates all of it in a second
+dist/
+archive/
+
+# dev tooling
+node_modules/
+tests/screens/
+
+# third-party Claude Code skills installed locally; not part of the game
+.claude/skills/
+
+# editors, OS, Python
+.idea/
+.vscode/
+.DS_Store
+__pycache__/
+*.pyc

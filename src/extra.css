@@ -1,0 +1,14 @@
+<style>
+.lbtn{padding:2px 8px;font-size:12px;font-family:var(--f-mono);margin-left:6px}
+.langs{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.langb{border:1px solid var(--line);background:var(--sheet);border-radius:6px;padding:16px;text-align:left;display:flex;flex-direction:column;gap:4px;min-height:72px}
+.langb b{font-size:18px;font-weight:700}
+.langb span{font-size:12px;color:var(--muted)}
+.langb{position:relative;padding-right:40px}
+/* a radio dot marks the picked language, so the choice reads as a selection, not a start */
+.langb::after{content:"";position:absolute;top:16px;right:14px;width:16px;height:16px;border-radius:50%;border:2px solid var(--line);box-sizing:border-box}
+.langb.on{border-color:var(--pen);box-shadow:inset 0 0 0 1px var(--pen);background:color-mix(in srgb,var(--pen) 8%,var(--sheet))}
+.langb.on::after{border-color:var(--pen);background:radial-gradient(circle,var(--pen) 0 3.5px,transparent 4.5px)}
+.langb:hover:not(:disabled){border-color:var(--ink)}
+.langb:disabled{opacity:.5;cursor:not-allowed}
+</style>

@@ -3,6 +3,7 @@
 set -e
 cd "$(dirname "$0")"
 OUT=dist/index.html
+mkdir -p dist  # dist/ is not in git, so a fresh clone has no folder yet
 cat src/head.html src/extra.css > $OUT
 printf '\n<div id="app"></div>\n\n<script>\n' >> $OUT
 # order matters: core helpers, country data, language packs (ru defines LANG), engine last

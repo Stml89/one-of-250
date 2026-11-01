@@ -1,285 +1,201 @@
 # One of 250
 
+![The recruiter's shift: a CV, the role's requirements, and Reject and Pass buttons](docs/screenshot.png)
+
 ## English
 
-A browser game about job hunting. First you spend half a day as a recruiter and find your own CV in the pile; then you get laid off and hunt for a job yourself, reading vacancies like a detective.
+### About the game
 
-Play: https://stml89.github.io/one-of-250/
+A browser game about job hunting, played from both sides of the desk. First you spend half a day as a recruiter and find your own CV in the pile. The next morning you are laid off, and you hunt for a job yourself, with the same CV.
 
-Current version: v1.1, with 7 interface languages (en, es, it, fr, ja, ru, zh) and 7 countries (Russia, USA, Spain, Italy, France, Japan, China).
+**Play: https://stml89.github.io/one-of-250/**
 
-### Structure
+It runs in the browser with no sign-up, on phone and desktop, in 7 languages (English, Spanish, Italian, French, Japanese, Russian, Chinese). Your character job-hunts in one of 7 countries, picked at random: Russia, USA, Spain, Italy, France, Japan or China.
 
-| Path | Contents |
+### How to play
+
+**1. The recruiter's shift.** A role has 250 CVs and you have 150 seconds. Read the brief, then reject or pass each CV with `←` / `→`, a swipe or the buttons. You see only the first two lines until you open the rest. Pass 4 good candidates to the manager. When the shift ends, the game shows you the CV you missed or misjudged: your own.
+
+**2. Fix your CV.** You get five lines, and their order matters. Choose the lines, the headline, photo, columns, work mode and relocation, and check how it looks through a recruiter's eyes.
+
+**3. The job search.** The goal is a job that pays at least what your last one did, before your savings run out (about 10 weeks). Each week you have 6 energy to spend:
+
+| Action | Energy |
 |---|---|
-| `src/head.html` | `<title>`, fonts and all page styles |
-| `src/extra.css` | Styles for the language screen |
-| `src/core.js` | Seed and random number generator, small helpers |
-| `src/countries.js` | Country data: currencies, salaries, cities, names, companies, CV conventions, job titles; texts in ru and en; `mergeCountryText` |
-| `src/ru.js` … `src/zh.js` | One file per language: `LANG.xx` (interface and content) and `COUNTRY_TEXT.xx` (country texts in that language) |
-| `src/engine.js` | Logic and screens. Not a single line of player-facing text: everything comes from the language pack |
-| `build.sh` | Builds `dist/index.html`, a single file you can open in a browser or put on any static hosting. `dist/` is not in git: after cloning, run `./build.sh` first |
-| `tests/run.sh` | Build plus all checks |
-| `archive/` | Prototypes v0.4–v0.9, one file each (v0.1–v0.3 were not kept) |
+| One-click application | 0.5 |
+| Application via a contact | 1 |
+| Tailored application | 2 |
+| Looking into a vacancy for clues | 1 |
+| Interview round | 1 |
+| Take-home task | 3 |
+| Building a portfolio | 2 |
 
-`ru.js` must come first among the language files: it declares `LANG`.
+Not every vacancy is what it seems. Some are real, some are ghost jobs that nobody will fill, some are already promised to an internal candidate, and some are scams. Decide which is which before you spend energy. Then watch your inbox for rejections, interviews and offers, and end the week when you're done.
 
-### Build and checks
+**4. The results.** The X-ray screen reveals what each vacancy really was and why each application succeeded or failed. If your savings ran out, you can try again a year later. The run ends with an epitaph, your points and a result card to share.
 
-You need Node.js and Python 3.
+**Daily run or free play.** The daily run is the same for everyone that day and can be played once. Free play is unlimited and doesn't count. Progress is saved in your browser, so you can close the tab and come back.
+
+### Real statistics in the game
+
+**Where they come from.** The figures come from the organisations below. They are stored in `MARKET_STATS` and `WORLD_STATS` in [`src/countries.js`](src/countries.js), and there is no live data feed: they are updated by hand. Each country figure is recorded with its month, source and a link.
+
+| Country | Figures | Source |
+|---|---|---|
+| Russia | Unemployment; CVs per vacancy (hh.index) | [Rosstat](https://rosstat.gov.ru/labour_force), [hh.ru](https://stats.hh.ru/) |
+| USA | Unemployment; unemployed people per job opening; length of job search | BLS: [unemployment](https://www.bls.gov/news.release/empsit.nr0.htm), [openings](https://www.bls.gov/news.release/jolts.nr0.htm), [duration](https://www.bls.gov/news.release/empsit.t12.htm) |
+| Spain, Italy, France | Unemployment; under-25 unemployment | [Eurostat](https://ec.europa.eu/eurostat/databrowser/view/une_rt_m/default/table) |
+| Japan | Unemployment; jobs per applicant; permanent jobs per applicant | [Statistics Bureau of Japan](https://www.stat.go.jp/english/data/roudou/index.html), [MHLW](https://www.mhlw.go.jp/toukei/list/114-1.html) |
+| China | Unemployment; youth unemployment; new graduates | [NBS](https://www.stats.gov.cn/english/PressRelease/), Ministry of Education ([via China Daily](https://govt.chinadaily.com.cn/s/202511/21/WS694a4679498e368550339281/china-to-have-12-7-million-new-college-graduates-next-year.html)) |
+| Worldwide | 244 applications per vacancy (2025) | [Greenhouse](https://www.greenhouse.com/recruiting-benchmarks) |
+| Worldwide | About 7 seconds per CV (7.4 s, 2018) | [TheLadders](https://www.prnewswire.com/news-releases/ladders-updates-popular-recruiter-eye-tracking-study-with-new-key-insights-on-how-job-seekers-can-improve-their-resumes-300744217.html) |
+
+**How they are used.**
+
+- **Shown to the player.** The country figures appear on the X-ray screen, and the two worldwide figures appear during and after the shift. Each one names its source and date and links to the source.
+- **Competition.** Each country has a `press` multiplier: how many applicants a vacancy gets compared with the US. It is a design decision based on the figures, not a statistic, and the game labels it "In the game".
+- **Young characters.** In Spain, Italy, France and China, a character under 25 faces extra competition, because youth unemployment there is far above the total.
+- **Search length.** On a US run, the X-ray compares your search with the official median. Other countries have no such figure in the game.
+
+**The rule.** Real figures always carry a source and date. Satirical ones, such as the fake job sites and the "market of the day", never do, so a joke can't pass for a statistic.
+
+**Keeping them current.** Update the figures once a quarter. `tests/langcheck.js` reports any figure older than 12 months, or without a link.
+
+### Build and publish
+
+You need Node.js and Python 3. `dist/` is not in git, so build first:
 
 ```bash
 ./build.sh
 ```
 
-```bash
-tests/run.sh
-```
-
-The full set takes about a minute and a half. Without screenshots (layout checks only) it takes about a minute:
-
-```bash
-SHOTS=0 tests/run.sh
-```
-
-Checks:
-
-- `tests/langcheck.js`: every language pack has the same structure as English; every language has texts for all countries; every screen renders in every language without `undefined`, `NaN` or unfilled `{male|female}` templates; every real-world figure has a source link.
-- `tests/balance.js`: the daily run with one seed is identical in every language; full runs across all countries and languages finish without errors; the job-found rate for playing blind and for playing well. The outcome of a run does not depend on the language, so balance is measured on 60 runs per country in English, and the other languages get 6 full runs per country to catch broken text (`BALANCE_RUNS` and `SMOKE_RUNS` change these numbers).
-- `tests/contrast.py`: every text colour on every background, in the light and dark themes and on the X-ray screen, has contrast of at least 4.5:1 (WCAG AA), and no text is smaller than 12px.
-- `tests/screens.spec.js` (Playwright, system Chrome): plays the same run through every screen in every language at phone width (375×812 and a small 375×667) and desktop width (1280px). It fails if the page scrolls sideways, text is cut off on a button, chip or stamp, or anything sticks out of its card. Screenshots go to `tests/screens/phone`, `tests/screens/phone-small` and `tests/screens/desktop` (not written with `SHOTS=0`), together with `index.html`, a contact sheet of screen × language. Needs `npm install` once; without it `tests/run.sh` skips this part.
-
-Expected result for v1.1: 0 structure diffs, 0 missing texts, 0 errors, 0 bad renders.
-
-### Adding a language
-
-1. Copy `src/en.js` to `src/xx.js`, replace `LANG.en` with `LANG.xx` and translate. Every list must keep the same length, or the daily run in that language will differ.
-2. Add `COUNTRY_TEXT.xx` at the end of the file with texts for all seven countries (see `es.js` or `ja.js` for an example).
-3. Add the code to `LANG_READY` and `LANG_LIST` in `src/engine.js`, and the file to `build.sh`.
-4. Run `tests/run.sh`.
-
-Grammatical gender is written inline as a `{male|female}` template. Age, years of experience, "N+ years of experience", notice period and seconds are the functions `age`, `years`, `expFrom`, `notice` and `secs` in the pack.
-
-### Adding a country
-
-1. Add a block to `COUNTRIES` (`src/countries.js`): numbers (`cur`, `per`, `step`, `base`, `fee`, `photo`), ru/en texts, and the key in `COUNTRY_KEYS`.
-2. Add that country's texts to `COUNTRY_TEXT` in every language file.
-3. Add its figures to `MARKET_STATS` (see below).
-4. Run `tests/run.sh`.
-
-### Real labour-market statistics
-
-`MARKET_STATS` in `src/countries.js` holds real figures for each country: unemployment, youth unemployment, the hh.index, vacancies per applicant and so on. Each figure is stored as `[kind, value, "YYYY-MM", source, url]`. The player sees them on the X-ray screen at the end of the job search: the phrase with the figure and the source name are links to the page the figure comes from (they open in a new tab), next to the month of the data. The wording for each kind comes from the language packs (`LANG.xx.facts`).
-
-The figures also drive the mechanics:
-
-- `press`: how many times more applicants a vacancy gets than in the US. This is not a statistic but a design decision based on the figures. The more applicants, the less often a CV gets opened at all.
-- `young`: extra competition for a character under 25 where youth unemployment is far above the total.
-- `search`: the median length of a job search and the share of long searches, where the country has an official series (so far only the US). The X-ray screen shows it.
-
-`WORLD_STATS` holds figures shared by all countries: 244 applications per vacancy (Greenhouse, 2025; on the shift screen) and 7 seconds per CV (TheLadders, 2018 follow-up study: 7.4 s; in the shift results). Each also links to its source.
-
-Update the figures once a quarter, together with the link if the source has moved. `tests/langcheck.js` prints `stale N` if any figure is older than 12 months, and `no source link N` if a figure has no link. The rule: real figures always come with a source and month; satirical ones never do, so the player can't mistake a joke for a statistic.
-
-### Publishing
-
-`build.sh` builds two variants:
-
-- `dist/index.html`: without `<!doctype>` and `<head>`, for the Claude artifact platform (which adds the wrapper).
-- `dist/amplify/index.html` and `dist/amplify.zip`: a complete page for any static hosting (AWS Amplify, S3, Netlify, GitHub Pages). `tools/standalone.py` builds it: it adds the doctype, charset, viewport, the link-preview description and the same CSS reset as the artifact, so the page looks the same in both places. It also sets `window.ONEOF250_PROD=true`: the public build has no "Reset today's result" button, which stays in the artifact for testing.
-
-To check locally before publishing:
+To play your build locally, run this and open http://localhost:8765:
 
 ```bash
 python3 -m http.server 8765 --directory dist/amplify
 ```
 
-and open http://localhost:8765.
-
-### Deploying to GitHub Pages
-
-`.github/workflows/pages.yml` runs `./build.sh` on every push to `main` and publishes `dist/amplify/index.html`. Turn it on once: **Settings → Pages → Source: GitHub Actions**. Address: https://stml89.github.io/one-of-250/. Build progress is in the **Actions** tab, where you can also start it by hand with **Run workflow**.
-
-GitHub Pages ignores the headers in `deploy/customHttp.yml`: it has its own cache of about 10 minutes.
-
-### Deploying to AWS Amplify
-
-The game is a single static file, so Amplify's "Deploy without Git" mode fits: no build on the AWS side and no repository connection.
-
-#### Option A: in the console (nothing to install)
-
-1. `./build.sh` produces `dist/amplify.zip` (with `index.html` at the root of the archive).
-2. AWS console → **AWS Amplify** → **Create new app** → **Deploy without Git**.
-3. App name `one-of-250`, branch `main`, drop in `dist/amplify.zip` → **Save and deploy**.
-4. **Hosting → Custom headers** → paste the contents of `deploy/customHttp.yml` → **Save**.
-5. The game's address will look like `https://main.<app-id>.amplifyapp.com`.
-
-To update: build again and press **Deploy updates** on the same branch, dropping in the new zip.
-
-#### Option B: with the script
-
-You need AWS CLI v2 ([install](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)) and configured access:
+To run all the checks (the browser layout checks also need `npm install` once, and are skipped without it):
 
 ```bash
-aws configure
+tests/run.sh
 ```
 
-Then:
+**Publish on GitHub Pages:**
 
-```bash
-deploy/amplify-deploy.sh
-```
+1. In the repository, set **Settings → Pages → Source** to **GitHub Actions** (once).
+2. Push to `main`. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) builds the game and publishes `dist/amplify/index.html`.
+3. Follow progress in the **Actions** tab, where **Run workflow** also starts it by hand.
 
-The script builds the game, creates the app and branch on the first run, then on every run uploads a new zip, waits for the deployment to finish and prints the address. You can change the app name, branch and region: `APP_NAME=my-game BRANCH=main AWS_REGION=eu-central-1 deploy/amplify-deploy.sh`. The AWS user needs `amplify:*` permissions for this app.
+### Privacy
 
-#### Headers
+The game has no accounts, ads or analytics, and it never sends your progress anywhere. Your run, today's result and your language are saved only in your browser (`localStorage`); clearing your site data deletes them.
 
-`deploy/customHttp.yml` sets a 5-minute cache (repeat visits don't reach AWS, and a new version reaches players quickly) and basic security headers. The script applies them itself; in option A you paste them by hand.
+Two outside services are involved: the page loads its fonts from Google Fonts, and it is hosted on GitHub Pages. Both can see ordinary request data such as your IP address.
 
-#### Cost
+### Disclaimer
 
-The file weighs ~540 KB, ~200 KB compressed in transfer. Amplify charges for outbound traffic (about $0.15 per GB) and storage (negligible). 10,000 players ≈ 2 GB ≈ $0.30; a million ≈ $30. New AWS accounts get a free tier or starter credits; the terms depend on the sign-up date and are shown under Billing → Free Tier.
+The game is satire. Its companies, candidates and vacancies are fictional, and any resemblance to real ones is unintended. Job-site names such as LinkedOut are parodies, and the game has no connection with the real services. The real statistics are labelled with their source and date and may be out of date. Nothing here is career, legal or financial advice.
 
-Before going public, set a budget alert: **Billing → Budgets → Create budget → Zero spend budget** or a **Monthly cost budget** of $5, and you'll get an email if something goes wrong. The alert doesn't switch anything off by itself; if traffic spikes, you can stop the app by deleting the branch in the Amplify console.
+### License
+
+© 2026 Siarhei Stamal. All rights reserved: this is not an open-source project. You may play the game, read the code for your own learning, and share links, screenshots and result cards. Copying, hosting, modifying or commercial use, including training and hiring, needs written permission. See [LICENSE](LICENSE) for the full terms and how to contact the author.
 
 ## Русский
 
-Браузерная игра о поиске работы. Сначала ты полдня работаешь рекрутером и находишь в стопке собственное резюме, потом тебя сокращают, и ты ищешь работу сам, разгадывая вакансии как детектив.
+### Об игре
 
-Играть: https://stml89.github.io/one-of-250/
+Браузерная игра о поиске работы с двух сторон стола. Сначала ты полдня работаешь рекрутером и находишь в стопке собственное резюме. На следующее утро тебя сокращают, и ты ищешь работу сам, с тем же резюме.
 
-Текущая версия — v1.1: 7 языков интерфейса (en, es, it, fr, ja, ru, zh) и 7 стран (Россия, США, Испания, Италия, Франция, Япония, Китай).
+**Играть: https://stml89.github.io/one-of-250/**
 
-### Структура
+Игра идёт в браузере без регистрации, на телефоне и компьютере, на 7 языках (английский, испанский, итальянский, французский, японский, русский, китайский). Твой персонаж ищет работу в одной из 7 стран, она выбирается случайно: Россия, США, Испания, Италия, Франция, Япония или Китай.
 
-| Путь | Что внутри |
+### Как играть
+
+**1. Смена рекрутера.** На вакансию пришло 250 резюме, а у тебя 150 секунд. Прочитай задание и отклоняй или пропускай каждое резюме клавишами `←` / `→`, свайпом или кнопками. Видны только первые две строки, пока не откроешь остальное. Нужно передать менеджеру 4 хороших кандидатов. После смены игра покажет резюме, которое ты пропустил или оценил неверно: твоё собственное.
+
+**2. Исправь резюме.** В нём пять строк, и порядок важен. Выбери строки, заголовок, фото, колонки, формат работы и готовность к переезду и посмотри, как это выглядит глазами рекрутера.
+
+**3. Поиск работы.** Цель: найти работу с зарплатой не ниже прошлой, пока не кончились сбережения (примерно 10 недель). Каждую неделю есть 6 единиц энергии:
+
+| Действие | Энергия |
 |---|---|
-| `src/head.html` | `<title>`, шрифты и все стили страницы |
-| `src/extra.css` | Стили экрана выбора языка |
-| `src/core.js` | Сид и генератор случайных чисел, мелкие помощники |
-| `src/countries.js` | Данные стран: валюты, зарплаты, города, имена, компании, оформление, должности; тексты на ru и en; `mergeCountryText` |
-| `src/ru.js` … `src/zh.js` | По файлу на язык: `LANG.xx` (интерфейс и контент) и `COUNTRY_TEXT.xx` (тексты стран на этом языке) |
-| `src/engine.js` | Логика и экраны. Ни одной строки текста — всё берётся из языкового пакета |
-| `build.sh` | Собирает `dist/index.html` — один файл, который можно открыть в браузере или выложить на любой статический хостинг. `dist/` не хранится в git: после клонирования сначала `./build.sh` |
-| `tests/run.sh` | Сборка и все проверки |
-| `archive/` | Прототипы v0.4–v0.9 одним файлом (v0.1–v0.3 не сохранились) |
+| Отклик в один клик | 0,5 |
+| Отклик через знакомого | 1 |
+| Отклик под вакансию | 2 |
+| Изучить вакансию в поисках улик | 1 |
+| Этап собеседования | 1 |
+| Тестовое задание | 3 |
+| Собрать портфолио | 2 |
 
-`ru.js` должен идти первым из языковых файлов: в нём объявлен `LANG`.
+Не все вакансии такие, какими кажутся. Есть настоящие, есть вакансии-призраки, которые никто не собирается закрывать, есть обещанные своему кандидату и есть мошеннические. Разберись, где какая, прежде чем тратить энергию. Следи за почтой: там отказы, собеседования и офферы. Когда закончишь, завершай неделю.
 
-### Сборка и проверки
+**4. Итоги.** Экран рентгена показывает, чем на самом деле была каждая вакансия и почему каждый отклик сработал или нет. Если сбережения кончились, можно попробовать снова через год. Забег заканчивается эпитафией, очками и карточкой результата, которой можно поделиться.
 
-Нужны Node.js и Python 3.
+**Забег дня или свободная игра.** Забег дня один и тот же у всех в этот день, сыграть его можно один раз. Свободная игра не ограничена и в зачёт не идёт. Прогресс хранится в браузере, поэтому вкладку можно закрыть и вернуться позже.
+
+### Реальная статистика в игре
+
+**Откуда цифры.** Цифры взяты у организаций из таблицы ниже. Они лежат в `MARKET_STATS` и `WORLD_STATS` в [`src/countries.js`](src/countries.js). Живого потока данных нет, цифры обновляются вручную. У каждой цифры по стране записаны месяц, источник и ссылка.
+
+| Страна | Цифры | Источник |
+|---|---|---|
+| Россия | Безработица; резюме на вакансию (hh.индекс) | [Росстат](https://rosstat.gov.ru/labour_force), [hh.ru](https://stats.hh.ru/) |
+| США | Безработица; безработных на открытую вакансию; длительность поиска | BLS: [безработица](https://www.bls.gov/news.release/empsit.nr0.htm), [вакансии](https://www.bls.gov/news.release/jolts.nr0.htm), [длительность](https://www.bls.gov/news.release/empsit.t12.htm) |
+| Испания, Италия, Франция | Безработица; безработица среди молодёжи до 25 лет | [Eurostat](https://ec.europa.eu/eurostat/databrowser/view/une_rt_m/default/table) |
+| Япония | Безработица; вакансий на соискателя; постоянных вакансий на соискателя | [Статистическое бюро Японии](https://www.stat.go.jp/english/data/roudou/index.html), [MHLW](https://www.mhlw.go.jp/toukei/list/114-1.html) |
+| Китай | Безработица; безработица среди молодёжи; выпускники | [NBS](https://www.stats.gov.cn/english/PressRelease/), Министерство образования ([через China Daily](https://govt.chinadaily.com.cn/s/202511/21/WS694a4679498e368550339281/china-to-have-12-7-million-new-college-graduates-next-year.html)) |
+| Весь мир | 244 отклика на вакансию (2025) | [Greenhouse](https://www.greenhouse.com/recruiting-benchmarks) |
+| Весь мир | Около 7 секунд на резюме (7,4 с, 2018) | [TheLadders](https://www.prnewswire.com/news-releases/ladders-updates-popular-recruiter-eye-tracking-study-with-new-key-insights-on-how-job-seekers-can-improve-their-resumes-300744217.html) |
+
+**Как они используются.**
+
+- **Показываются игроку.** Цифры по стране видны на экране рентгена, две мировые цифры появляются во время смены и после неё. У каждой указаны источник и дата и есть ссылка на источник.
+- **Конкуренция.** У каждой страны есть множитель `press`: во сколько раз больше откликов получает вакансия по сравнению с США. Это решение дизайнера на основе цифр, а не статистика, и в игре он подписан как игровое значение.
+- **Молодые персонажи.** В Испании, Италии, Франции и Китае у персонажа младше 25 лет конкуренция выше, потому что молодёжная безработица там намного выше общей.
+- **Длительность поиска.** В забеге по США рентген сравнивает твой поиск с официальной медианой. Для других стран такой цифры в игре нет.
+
+**Правило.** У реальных цифр всегда есть источник и дата. У сатирических, например у выдуманных сайтов вакансий и «рынка дня», их никогда нет, чтобы шутку нельзя было принять за статистику.
+
+**Как поддерживать актуальность.** Цифры стоит обновлять раз в квартал. `tests/langcheck.js` сообщает о цифрах старше 12 месяцев и о цифрах без ссылки.
+
+### Сборка и публикация
+
+Нужны Node.js и Python 3. Папки `dist/` нет в git, поэтому сначала соберите игру:
 
 ```bash
 ./build.sh
 ```
 
-```bash
-tests/run.sh
-```
-
-Весь набор идёт около полутора минут. Без скриншотов (только проверки вёрстки) — около минуты:
-
-```bash
-SHOTS=0 tests/run.sh
-```
-
-Проверки:
-
-- `tests/langcheck.js` — структура каждого языкового пакета совпадает с английским; у каждого языка есть тексты для всех стран; все экраны отрисовываются во всех языках без `undefined`, `NaN` и неподставленных шаблонов `{м|ж}`; у каждой реальной цифры есть ссылка на источник.
-- `tests/balance.js` — забег дня с одним сидом одинаков на всех языках; полные прогоны забегов по всем странам и языкам без ошибок; доля найденной работы для игры «не глядя» и для хорошей игры. Исход забега от языка не зависит, поэтому баланс считается по 60 забегам на страну на английском, а остальные языки проходят по 6 полных забегов на страну, чтобы поймать битый текст (`BALANCE_RUNS` и `SMOKE_RUNS` меняют эти числа).
-- `tests/contrast.py` — контраст каждого цвета текста на каждом фоне в светлой, тёмной теме и на рентгене не ниже 4,5:1 (WCAG AA), и нигде нет текста мельче 12px.
-- `tests/screens.spec.js` (Playwright, системный Chrome) — проходит один и тот же забег по всем экранам на всех языках при ширине телефона (375×812 и маленького 375×667) и компьютера (1280px). Падает, если страница прокручивается вбок, обрезан текст на кнопке, чипе или штампе или что-то вылезает за карточку. Скриншоты кладёт в `tests/screens/phone`, `tests/screens/phone-small` и `tests/screens/desktop` (с `SHOTS=0` не пишет их), там же `index.html` — сводная таблица «экран × язык». Нужен один раз `npm install`; без него `tests/run.sh` эту часть пропускает.
-
-Ожидаемый результат v1.1: 0 расхождений структуры, 0 пропущенных текстов, 0 ошибок, 0 битых отрисовок.
-
-### Как добавить язык
-
-1. Скопировать `src/en.js` в `src/xx.js`, заменить `LANG.en` на `LANG.xx` и перевести. Все списки должны остаться той же длины — иначе забег дня на этом языке будет другим.
-2. Добавить в конец файла `COUNTRY_TEXT.xx` с текстами всех семи стран (образец — в любом из `es.js`, `ja.js`).
-3. Добавить код в `LANG_READY` и `LANG_LIST` в `src/engine.js` и файл — в `build.sh`.
-4. Запустить `tests/run.sh`.
-
-Род задаётся шаблоном `{мужской|женский}` прямо в строке. Возраст, стаж, «опыт от N лет», срок выхода и секунды — функции `age`, `years`, `expFrom`, `notice`, `secs` в пакете.
-
-### Как добавить страну
-
-1. Добавить блок в `COUNTRIES` (`src/countries.js`): числа (`cur`, `per`, `step`, `base`, `fee`, `photo`), тексты на ru/en, ключ — в `COUNTRY_KEYS`.
-2. Добавить тексты этой страны в `COUNTRY_TEXT` каждого языкового файла.
-3. Добавить её цифры в `MARKET_STATS` (см. ниже).
-4. Запустить `tests/run.sh`.
-
-### Реальная статистика рынка труда
-
-`MARKET_STATS` в `src/countries.js` — настоящие цифры по каждой стране: безработица, молодёжная безработица, hh.индекс, вакансии на соискателя и т. п. Каждая цифра записана как `[вид, значение, "ГГГГ-ММ", источник, ссылка]`. Игрок видит их на рентгене в конце поиска работы: фраза с цифрой и название источника — ссылки на страницу, откуда цифра взята (открываются в новой вкладке), рядом месяц данных. Формулировку для каждого вида дают языковые пакеты (`LANG.xx.facts`).
-
-Цифры работают и в механике:
-
-- `press` — во сколько раз больше откликов на вакансию, чем в США. Это не статистика, а решение дизайнера, основанное на цифрах. Чем больше откликов, тем реже резюме вообще открывают.
-- `young` — дополнительная конкуренция для персонажа младше 25 лет там, где молодёжная безработица намного выше общей.
-- `search` — медиана длительности поиска и доля долгого поиска, если по стране есть официальный ряд (пока только США). Её показывает рентген в конце.
-
-`WORLD_STATS` — цифры, общие для всех стран: 244 отклика на вакансию (Greenhouse, 2025; на экране смены) и 7 секунд на резюме (TheLadders, повторное исследование 2018 года: 7,4 с; в итогах смены). У каждой тоже есть ссылка на источник.
-
-Цифры обновлять раз в квартал, вместе со ссылкой, если источник переехал. `tests/langcheck.js` печатает `stale N`, если какой-то цифре больше 12 месяцев, и `no source link N`, если у цифры нет ссылки. Правило: реальные цифры — только с источником и месяцем, сатирические — без них, чтобы игрок не спутал шутку со статистикой.
-
-### Публикация
-
-`build.sh` собирает два варианта:
-
-- `dist/index.html` — без `<!doctype>` и `<head>`, для платформы артефактов (обёртку добавляет она).
-- `dist/amplify/index.html` и `dist/amplify.zip` — полная страница для любого статического хостинга (AWS Amplify, S3, Netlify, GitHub Pages). Её собирает `tools/standalone.py`: добавляет doctype, charset, viewport, описание для соцсетей и тот же CSS-сброс, что у артефакта, поэтому страница выглядит одинаково в обоих местах. Ещё он ставит `window.ONEOF250_PROD=true`: в публичной сборке нет кнопки «Сбросить результат дня», она остаётся только в артефакте для тестов.
-
-Проверить локально перед выкладкой:
+Чтобы поиграть в свою сборку локально, запустите это и откройте http://localhost:8765:
 
 ```bash
 python3 -m http.server 8765 --directory dist/amplify
 ```
 
-и открыть http://localhost:8765.
-
-### Деплой на GitHub Pages
-
-`.github/workflows/pages.yml` при каждом пуше в `main` запускает `./build.sh` и выкладывает `dist/amplify/index.html`. Один раз нужно включить: **Settings → Pages → Source: GitHub Actions**. Адрес: https://stml89.github.io/one-of-250/. Ход сборки виден во вкладке **Actions**; запустить вручную — там же, **Run workflow**.
-
-Заголовки из `deploy/customHttp.yml` GitHub Pages не применяет: кэш там свой, около 10 минут.
-
-### Деплой на AWS Amplify
-
-Игра — один статический файл, поэтому подходит режим Amplify «Deploy without Git»: без сборки на стороне AWS и без подключения репозитория.
-
-#### Вариант А: через консоль (без установки чего-либо)
-
-1. `./build.sh` — появится `dist/amplify.zip` (в корне архива лежит `index.html`).
-2. Консоль AWS → **AWS Amplify** → **Create new app** → **Deploy without Git**.
-3. Имя приложения `one-of-250`, ветка `main`, перетащить `dist/amplify.zip` → **Save and deploy**.
-4. **Hosting → Custom headers** → вставить содержимое `deploy/customHttp.yml` → **Save**.
-5. Адрес игры будет вида `https://main.<app-id>.amplifyapp.com`.
-
-Для обновления: собрать заново и в той же ветке нажать **Deploy updates**, перетащив новый zip.
-
-#### Вариант Б: скриптом
-
-Нужен AWS CLI v2 ([установка](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)) и настроенный доступ:
+Чтобы запустить все проверки (для проверок вёрстки в браузере один раз нужен `npm install`, без него они пропускаются):
 
 ```bash
-aws configure
+tests/run.sh
 ```
 
-Затем:
+**Публикация на GitHub Pages:**
 
-```bash
-deploy/amplify-deploy.sh
-```
+1. В репозитории выберите **Settings → Pages → Source: GitHub Actions** (один раз).
+2. Сделайте push в `main`. [`.github/workflows/pages.yml`](.github/workflows/pages.yml) соберёт игру и выложит `dist/amplify/index.html`.
+3. Ход сборки виден во вкладке **Actions**, там же **Run workflow** запускает её вручную.
 
-Скрипт собирает игру, при первом запуске создаёт приложение и ветку, потом при каждом запуске заливает новый zip, ждёт окончания деплоя и печатает адрес. Имя приложения, ветку и регион можно поменять: `APP_NAME=my-game BRANCH=main AWS_REGION=eu-central-1 deploy/amplify-deploy.sh`. Пользователю AWS нужны права на `amplify:*` для этого приложения.
+### Конфиденциальность
 
-#### Заголовки
+В игре нет аккаунтов, рекламы и аналитики, и она никуда не отправляет твой прогресс. Забег, результат дня и язык хранятся только в браузере (`localStorage`); если очистить данные сайта, они удалятся.
 
-`deploy/customHttp.yml` задаёт кэш на 5 минут (повторные заходы не идут в AWS, а новая версия доходит до игроков быстро) и базовые заголовки безопасности. Скрипт применяет их сам, в варианте А их вставляют вручную.
+Участвуют два внешних сервиса: шрифты загружаются из Google Fonts, а сама страница размещена на GitHub Pages. Оба видят обычные данные запроса, например IP-адрес.
 
-#### Стоимость
+### Оговорка
 
-Файл весит ~540 КБ, сжатый при передаче — ~200 КБ. Amplify берёт деньги за исходящий трафик (около $0.15 за ГБ) и хранение (копейки). 10 000 игроков ≈ 2 ГБ ≈ $0,30; миллион — около $30. Новым аккаунтам AWS даёт бесплатный уровень или стартовые кредиты — условия зависят от даты регистрации, их видно в разделе Billing → Free Tier.
+Игра сатирическая. Компании, кандидаты и вакансии в ней выдуманы, любое сходство с реальными случайно. Названия сайтов вакансий, например LinkedOut, это пародии, и с настоящими сервисами игра никак не связана. Реальная статистика подписана источником и датой и может устареть. Ничто здесь не является карьерной, юридической или финансовой консультацией.
 
-Перед публикацией стоит включить бюджетное оповещение: **Billing → Budgets → Create budget → Zero spend budget** или **Monthly cost budget** на $5 — придёт письмо, если что-то пойдёт не так. Оповещение ничего не отключает само; при всплеске трафика приложение можно остановить, удалив ветку в консоли Amplify.
+### Лицензия
+
+© 2026 Siarhei Stamal. Все права защищены: это не проект с открытым исходным кодом. Можно играть, читать код для собственного обучения и делиться ссылками, скриншотами и карточками результата. Для копирования, размещения, изменения и коммерческого использования, в том числе в обучении и найме, нужно письменное разрешение. Полные условия и контакт автора: [LICENSE](LICENSE) (на английском).

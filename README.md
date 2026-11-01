@@ -57,7 +57,7 @@ Not every vacancy is what it seems. Some are real, some are ghost jobs that nobo
 - **Young characters.** In Spain, Italy, France and China, a character under 25 faces extra competition, because youth unemployment there is far above the total.
 - **Search length.** On a US run, the X-ray compares your search with the official median. Other countries have no such figure in the game.
 
-**The rule.** Real figures always carry a source and date. Satirical ones, such as the fake job sites and the "market of the day", never do, so a joke can't pass for a statistic.
+**The rule.** Real figures always carry a source and date. Satirical ones, such as the invented job sites and the "market of the day", never do, so a joke can't pass for a statistic.
 
 **Keeping them current.** Update the figures once a quarter. `tests/langcheck.js` reports any figure older than 12 months, or without a link.
 
@@ -95,7 +95,7 @@ Two outside services are involved: the page loads its fonts from Google Fonts, a
 
 ### Disclaimer
 
-The game is satire. Its companies, candidates and vacancies are fictional, and any resemblance to real ones is unintended. Job-site names such as LinkedOut are parodies, and the game has no connection with the real services. The real statistics are labelled with their source and date and may be out of date. Nothing here is career, legal or financial advice.
+The game is satire. Its companies, job sites, candidates and vacancies are invented, and any resemblance to real ones is unintended. The game has no connection with any real job site or employer. The real statistics are labelled with their source and date and may be out of date. Nothing here is career, legal or financial advice.
 
 ### License
 
@@ -194,7 +194,7 @@ tests/run.sh
 
 ### Оговорка
 
-Игра сатирическая. Компании, кандидаты и вакансии в ней выдуманы, любое сходство с реальными случайно. Названия сайтов вакансий, например LinkedOut, это пародии, и с настоящими сервисами игра никак не связана. Реальная статистика подписана источником и датой и может устареть. Ничто здесь не является карьерной, юридической или финансовой консультацией.
+Игра сатирическая. Компании, сайты вакансий, кандидаты и вакансии в ней выдуманы, любое сходство с реальными случайно. Игра никак не связана с настоящими сайтами вакансий и работодателями. Реальная статистика подписана источником и датой и может устареть. Ничто здесь не является карьерной, юридической или финансовой консультацией.
 
 ### Лицензия
 

@@ -656,7 +656,7 @@ function langScreen(){
   /* the note explains the preselected tile; once the player picks another one it has nothing left to say */
   const note=pick===S.lang?`${U.langFrom[langSource()]} `:"";
   return header()+`<main class="wrap stack" style="padding-block:28px 40px">
-    <section class="hero"><h1>${U.brand}</h1><p>${U.langSub}</p></section>
+    <section class="hero"><h1 class="sr">${U.brand}</h1><p>${U.langSub}</p></section>
     <div class="langs" role="group" aria-label="${U.langSub}">${items}</div>
     <p class="hint">${note}${U.langLater}</p>
     <div class="acts">${btn("langGo","",U.start+" →","pri")}${changing?btn("langBack","",U.vac.back):""}</div>
@@ -669,7 +669,7 @@ function introScreen(){
   const acts=S.daily?btn("toTask","",U.next,"pri")+btn("free","",U.freePlay)
     :btn("toTask","",U.next,"pri")+btn("reroll","",U.otherLife)+(played?"":btn("daily","",U.backDaily));
   return header()+`<main class="wrap stack" style="padding-block:8px 40px">
-    <section class="hero"><div class="mode">${modeLine}</div><h1>${U.brand}</h1>
+    <section class="hero"><div class="mode">${modeLine}</div><h1 class="sr">${U.brand}</h1>
       ${playedCard()}
       ${modBanner()}
       <div class="modb story"><p>${ff(U.rumor)}</p></div></section>

@@ -179,7 +179,7 @@ LANG.it={
     weak:"Il CV veniva aperto, ma le righe erano generiche. Numeri e risultati agganciano più di «partecipazione a».",fine:"Hai fatto quasi tutto bene. A volte è solo il mercato."},
   ach:{self:"Recruiter di te stesso",own:"Raccomandazione confermata",ghosts:"Acchiappafantasmi",nose:"Fiuto da segugio",second:"Seconda vita",course:"Corso garantito",investor:"Investitore in te stesso",free:"Lavoro gratis",golden:"Collezionista di rifiuti",haggle:"Ha trattato ed è sopravvissuto"},
   ui:{
-    brand:"1 su 250",run:"partita",soon:"in arrivo",start:"Inizia",langFrom:{saved:"Selezionata: la tua ultima scelta.",browser:"Selezionata in base alla lingua del browser.",fallback:"La lingua del browser non è disponibile, quindi è selezionato l'inglese."},langLater:"Puoi cambiarla dopo con il pulsante della lingua, in alto nella schermata iniziale.",langSub:"Un gioco sulla ricerca di lavoro. Scegli la lingua.",langHint:"Il paese in cui cerchi lavoro è casuale: non dipende dalla lingua.",
+    brand:"Uno su 250",run:"partita",soon:"in arrivo",start:"Inizia",langFrom:{saved:"Selezionata: la tua ultima scelta.",browser:"Selezionata in base alla lingua del browser.",fallback:"La lingua del browser non è disponibile, quindi è selezionato l'inglese."},langLater:"Puoi cambiarla dopo con il pulsante della lingua, in alto nella schermata iniziale.",langSub:"Un gioco sulla ricerca di lavoro. Scegli la lingua.",langHint:"Il paese in cui cerchi lavoro è casuale: non dipende dalla lingua.",
     marketOfDay:"Mercato del giorno",dailyLine:n=>`Partita del giorno #${n} · uguale per tutti oggi`,freeLine:"Partita libera · non conta",
     next:"Avanti",freePlay:"Partita libera",otherLife:"Un'altra vita",backDaily:"Torna alla partita del giorno",backLeave:"La partita è salvata. Premi Indietro di nuovo per uscire dal gioco.",thisIsYou:"La tua scheda",
     rumor:"In ufficio girano voci di licenziamenti. Ieri, per sicurezza, hai mandato il CV ovunque potessi. E oggi ti hanno chiesto di sostituire un recruiter per mezza giornata.",
@@ -268,7 +268,7 @@ LANG.it={
     ep:{courses:"corsi → ",recNone:"Da recruiter, non è mai arrivat{o|a} al proprio CV.",recPass:s=>`Da recruiter, si è passat{o|a} da sol{o|a} in ${s} s.`,recRej:s=>`Da recruiter, si è scartat{o|a} da sol{o|a} in ${s} secondi.`,
       endPlanB:"Ora sa perché nessuno ha richiamato.",endRetry:"Ha trovato lavoro al secondo tentativo. L'anno di piano B non è stato inutile.",endGood:"Ha trovato un lavoro non peggiore del precedente. Quasi una vittoria.",endLow:"Ha trovato lavoro. Pagato meno di prima, ma l'ha trovato.",
       line1:(n,a)=>`${n}, ${a}. Qui giace una ricerca di lavoro.`,facts:(a,w,r,t,x)=>`${a} candidatur${a===1?"a":"e"} · ${w} settiman${w===1?"a":"e"} di ricerca · fiuto ${r}/${t} · ${x} prov${x===1?"a":"e"}`,
-      shareDaily:n=>`«1 su 250» · partita del giorno #${n}`,shareFree:"«1 su 250» · partita libera",rip:"Qui giace",dailyHdr:n=>`Partita del giorno #${n}`,freeHdr:"Partita libera",
+      shareDaily:n=>`«Uno su 250» · partita del giorno #${n}`,shareFree:"«Uno su 250» · partita libera",rip:"Qui giace",dailyHdr:n=>`Partita del giorno #${n}`,freeHdr:"Partita libera",
       gridLegend:"○ silenzio · ● colloquio · ★ offerta. Punti: buoni candidati nel turno, decisioni giuste, esito della ricerca e risparmi rimasti.",ach:"Traguardi",share:"Condividi",copy:"Copia il testo",newLife:"Un'altra vita",tomorrow:"La prossima partita del giorno è domani, con un altro mercato."}
   }
 };

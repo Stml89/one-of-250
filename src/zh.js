@@ -179,7 +179,7 @@ LANG.zh={
     weak:"简历被打开了，但内容太空。数字和成果比“参与了”更打动人。",fine:"你几乎全做对了。有时候就是市场的问题。"},
   ach:{self:"自己面试自己",own:"关系户",ghosts:"捉鬼专家",nose:"侦探嗅觉",second:"二次出发",course:"包就业课程",investor:"投资自己",free:"免费外包",golden:"拒信收藏家",haggle:"谈薪幸存者"},
   ui:{
-    brand:"250分之1",run:"局",soon:"即将推出",start:"开始",langFrom:{saved:"已选中：你上次的选择。",browser:"已根据浏览器语言选中。",fallback:"暂不支持你的浏览器语言，因此选中了英语。"},langLater:"之后可以在开始页面顶部的语言按钮里更改。",langSub:"一款关于找工作的游戏。请选择语言。",langHint:"你找工作的国家是随机的，和语言无关。",
+    brand:"250人之一",run:"局",soon:"即将推出",start:"开始",langFrom:{saved:"已选中：你上次的选择。",browser:"已根据浏览器语言选中。",fallback:"暂不支持你的浏览器语言，因此选中了英语。"},langLater:"之后可以在开始页面顶部的语言按钮里更改。",langSub:"一款关于找工作的游戏。请选择语言。",langHint:"你找工作的国家是随机的，和语言无关。",
     marketOfDay:"今日市场",dailyLine:n=>`今日挑战 #${n} · 今天所有人都一样`,freeLine:"自由模式 · 不计分",
     next:"下一步",freePlay:"自由模式",otherLife:"换一种人生",backDaily:"回到今日挑战",backLeave:"进度已保存。再按一次返回即可退出游戏。",thisIsYou:"你的档案",
     rumor:"公司里传着要裁员的消息。昨天你保险起见，把简历投遍了能投的地方。今天又被叫去临时顶半天招聘的班。",
@@ -268,7 +268,7 @@ LANG.zh={
     ep:{courses:"课程 → ",recNone:"当招聘专员时，没看到自己的简历。",recPass:s=>`当招聘专员时，用${s}秒推荐了自己。`,recRej:s=>`当招聘专员时，用${s}秒淘汰了自己。`,
       endPlanB:"现在知道为什么没人回电话了。",endRetry:"第二次找到了工作。B计划的那一年没白过。",endGood:"找到了不比以前差的工作。差不多算赢了。",endLow:"找到了工作。工资比以前低，但总算找到了。",
       line1:(n,a)=>`${n}，${a}。这里长眠着一次求职。`,facts:(a,w,r,t,x)=>`投递${a}份 · 求职${w}周 · 直觉 ${r}/${t} · 笔试${x}次`,
-      shareDaily:n=>`《250分之1》· 今日挑战 #${n}`,shareFree:"《250分之1》· 自由模式",rip:"在此长眠",dailyHdr:n=>`今日挑战 #${n}`,freeHdr:"自由模式",
+      shareDaily:n=>`《250人之一》· 今日挑战 #${n}`,shareFree:"《250人之一》· 自由模式",rip:"在此长眠",dailyHdr:n=>`今日挑战 #${n}`,freeHdr:"自由模式",
       gridLegend:"○ 沉默 · ● 面试 · ★ 录用。得分：轮班中推荐的好人选、正确决定、求职结果和剩余存款。",ach:"成就",share:"分享",copy:"复制文本",newLife:"换一种人生",tomorrow:"下一个今日挑战在明天，市场也会不同。"}
   }
 };

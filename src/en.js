@@ -179,7 +179,7 @@ LANG.en={
     weak:"Your CV got opened, but the lines were generic. Numbers and results hook better than «took part in».",fine:"You did almost everything right. Sometimes it's just the market."},
   ach:{self:"Your own recruiter",own:"Inside connection",ghosts:"Ghostbuster",nose:"Bloodhound",second:"Second wind",course:"Guaranteed course",investor:"Self-investor",free:"Unpaid contractor",golden:"Rejection collector",haggle:"Haggled and survived"},
   ui:{
-    brand:"1 in 250",run:"run",soon:"coming soon",start:"Start",langFrom:{saved:"Selected: your last choice.",browser:"Selected from your browser's language.",fallback:"Your browser's language isn't available, so English is selected."},langLater:"You can change it later with the language button at the top of the start screen.",langSub:"A game about job hunting. Choose your language.",langHint:"The country you job-hunt in is random — it doesn't depend on the language.",
+    brand:"One of 250",run:"run",soon:"coming soon",start:"Start",langFrom:{saved:"Selected: your last choice.",browser:"Selected from your browser's language.",fallback:"Your browser's language isn't available, so English is selected."},langLater:"You can change it later with the language button at the top of the start screen.",langSub:"A game about job hunting. Choose your language.",langHint:"The country you job-hunt in is random — it doesn't depend on the language.",
     marketOfDay:"Market of the day",dailyLine:n=>`Daily run #${n} · the same for everyone today`,freeLine:"Free play · doesn't count",
     next:"Next",freePlay:"Free play",otherLife:"Another life",backDaily:"Back to the daily run",backLeave:"Your run is saved. Press Back again to leave the game.",thisIsYou:"This is you",
     rumor:"There are rumors of layoffs at the office. Yesterday, just in case, you sent your CV everywhere you could. And today you've been asked to fill in for a recruiter for half a day.",
@@ -268,7 +268,7 @@ LANG.en={
     ep:{courses:"courses → ",recNone:"As a recruiter, never got to their own CV.",recPass:s=>`As a recruiter, passed themselves on in ${s} s.`,recRej:s=>`As a recruiter, rejected themselves in ${s} seconds.`,
       endPlanB:"Now knows why nobody called back.",endRetry:"Found a job on the second try. The year of plan B wasn't wasted.",endGood:"Found a job no worse than the last one. Almost a win.",endLow:"Found a job. Lower pay than before, but found one.",
       line1:(n,a)=>`${n}, ${a} old. Here lies a job search.`,facts:(a,w,r,t,x)=>`${a} application${a===1?"":"s"} · ${w} week${w===1?"":"s"} of searching · instinct ${r}/${t} · ${x} take-home task${x===1?"":"s"}`,
-      shareDaily:n=>`«1 in 250» · daily run #${n}`,shareFree:"«1 in 250» · free play",rip:"Here lies",dailyHdr:n=>`Daily run #${n}`,freeHdr:"Free play",
+      shareDaily:n=>`«One of 250» · daily run #${n}`,shareFree:"«One of 250» · free play",rip:"Here lies",dailyHdr:n=>`Daily run #${n}`,freeHdr:"Free play",
       gridLegend:"○ silence · ● interview · ★ offer. Points: good candidates on the shift, right calls on jobs, the search result and savings left.",ach:"Achievements",share:"Share",copy:"Copy text",newLife:"Another life",tomorrow:"The next daily run is tomorrow, with a different market."}
   }
 };

@@ -1,4 +1,4 @@
-# One in 250
+# One of 250
 
 ## English
 

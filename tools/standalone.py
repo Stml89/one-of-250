@@ -22,7 +22,7 @@ img{max-width:100%}
 META = """<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Five minutes on the recruiter’s side, and “your CV gets 7 seconds” stops sounding like a cliché.">
-<meta property="og:title" content="1 in 250">
+<meta property="og:title" content="One of 250">
 <meta property="og:description" content="Five minutes on the recruiter’s side, and “your CV gets 7 seconds” stops sounding like a cliché.">
 <meta property="og:type" content="website">"""
 
@@ -34,8 +34,6 @@ def main() -> None:
     page = SRC.read_text(encoding="utf-8")
     cut = page.index('<div id="app">')
     head, body = page[:cut], page[cut:]
-    # crawlers and link previews read the title before the game sets it per language; match lang="en" and og:title
-    head = head.replace("<title>1 из 250</title>", "<title>1 in 250</title>", 1)
     html = (
         "<!doctype html>\n<html lang=\"en\">\n<head>\n"
         + META + "\n" + RESET + "\n" + PROD + "\n" + head.strip()

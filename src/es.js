@@ -179,7 +179,7 @@ LANG.es={
     weak:"Abrieron tu CV, pero las líneas eran genéricas. Cifras y resultados enganchan más que «participación en».",fine:"Lo hiciste casi todo bien. A veces es el mercado."},
   ach:{self:"Tu propio reclutador",own:"Enchufe confirmado",ghosts:"Cazafantasmas",nose:"Olfato de sabueso",second:"Segundo aire",course:"Curso con garantía",investor:"Inversor en ti mismo",free:"Trabajo gratis",golden:"Coleccionista de rechazos",haggle:"Negoció y sobrevivió"},
   ui:{
-    brand:"1 de 250",run:"partida",soon:"próximamente",start:"Empezar",langFrom:{saved:"Seleccionado: tu última elección.",browser:"Seleccionado según el idioma de tu navegador.",fallback:"El idioma de tu navegador no está disponible, así que se ha elegido el inglés."},langLater:"Puedes cambiarlo luego con el botón de idioma, arriba en la pantalla de inicio.",langSub:"Un juego sobre buscar trabajo. Elige tu idioma.",langHint:"El país en el que buscas trabajo es aleatorio: no depende del idioma.",
+    brand:"Uno de 250",run:"partida",soon:"próximamente",start:"Empezar",langFrom:{saved:"Seleccionado: tu última elección.",browser:"Seleccionado según el idioma de tu navegador.",fallback:"El idioma de tu navegador no está disponible, así que se ha elegido el inglés."},langLater:"Puedes cambiarlo luego con el botón de idioma, arriba en la pantalla de inicio.",langSub:"Un juego sobre buscar trabajo. Elige tu idioma.",langHint:"El país en el que buscas trabajo es aleatorio: no depende del idioma.",
     marketOfDay:"Mercado del día",dailyLine:n=>`Partida del día #${n} · la misma para todos hoy`,freeLine:"Partida libre · no puntúa",
     next:"Siguiente",freePlay:"Partida libre",otherLife:"Otra vida",backDaily:"Volver a la partida del día",backLeave:"Tu partida está guardada. Pulsa Atrás otra vez para salir del juego.",thisIsYou:"Tu ficha",
     rumor:"En la oficina se rumorea que habrá despidos. Ayer, por si acaso, mandaste tu CV a todas partes. Y hoy te han pedido que sustituyas a un reclutador media jornada.",
@@ -268,7 +268,7 @@ LANG.es={
     ep:{courses:"cursos → ",recNone:"Como reclutador, nunca llegó a su propio CV.",recPass:s=>`Como reclutador, se pasó a sí mism{o|a} en ${s} s.`,recRej:s=>`Como reclutador, se descartó a sí mism{o|a} en ${s} segundos.`,
       endPlanB:"Ahora sabe por qué nadie le llamó.",endRetry:"Encontró trabajo al segundo intento. El año de plan B no fue en vano.",endGood:"Encontró un trabajo no peor que el anterior. Casi una victoria.",endLow:"Encontró trabajo. Con menos sueldo, pero lo encontró.",
       line1:(n,a)=>`${n}, ${a}. Aquí yace una búsqueda de empleo.`,facts:(a,w,r,t,x)=>`${a} candidatura${a===1?"":"s"} · ${w} semana${w===1?"":"s"} buscando · olfato ${r}/${t} · ${x} prueba${x===1?"":"s"}`,
-      shareDaily:n=>`«1 de 250» · partida del día #${n}`,shareFree:"«1 de 250» · partida libre",rip:"Aquí yace",dailyHdr:n=>`Partida del día #${n}`,freeHdr:"Partida libre",
+      shareDaily:n=>`«Uno de 250» · partida del día #${n}`,shareFree:"«Uno de 250» · partida libre",rip:"Aquí yace",dailyHdr:n=>`Partida del día #${n}`,freeHdr:"Partida libre",
       gridLegend:"○ silencio · ● entrevista · ★ oferta. Puntos: buenos candidatos en el turno, decisiones acertadas, resultado de la búsqueda y colchón restante.",ach:"Logros",share:"Compartir",copy:"Copiar texto",newLife:"Otra vida",tomorrow:"La próxima partida del día es mañana, con otro mercado."}
   }
 };
